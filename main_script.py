@@ -3,7 +3,9 @@ import sys
 import numpy as np
 import keras
 from keras.models import load_model
-from spellchecker import SpellChecker
+#from spellchecker import SpellChecker
+from textblob import TextBlob
+
 
 
 def nothing(x):
@@ -21,7 +23,8 @@ def get_class_label(val, dictionary):
 
 
 model= load_model('asl_model_saved.h5')
-spell = SpellChecker()
+#spell = SpellChecker()
+spell = TextBlob()
 
 # create alphabet dictionary to label the letters {'a':1, ..., 'nothing':29}
 #alphabet = {chr(i+96).upper():i for i in range(1,27)}
